@@ -1,0 +1,179 @@
+/* Full screen container for the chat component */
+.chat-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #2f0d39;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* Chat box with user and bot messages */
+.chat-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 90%;
+  max-width: 1200px; /* Max width for responsiveness */
+  background-color: #3e1a4f; /* Slightly lighter purple-black background */
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+/* Left side chat window (Bot messages) */
+.chat-window {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  background-color: #4e1d62; /* Darker purple for the bot side */
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  height: 100%;
+  position: relative;
+}
+
+/* Chat messages */
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 10px;
+  margin-bottom: 20px;
+}
+
+/* Message styles */
+.message {
+  margin: 10px 0;
+  max-width: 70%;
+  padding: 12px 18px;
+  border-radius: 20px;
+  word-wrap: break-word;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.user-message {
+  background-color: #ff7c7c; /* Reddish pink for the user */
+  color: white;
+  align-self: flex-end;
+  border-bottom-left-radius: 0;
+}
+
+.bot-message {
+  background-color: #6f2b9c; /* Purple for the bot */
+  color: white;
+  align-self: flex-start;
+  border-bottom-right-radius: 0;
+}
+
+/* Loading dots for bot */
+.bot-message .loading-dots {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  color: #888;
+}
+
+.bot-message .loading-dots span {
+  animation: dot-blink 1s infinite step-start;
+  margin: 0 3px;
+}
+
+.bot-message .loading-dots span:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.bot-message .loading-dots span:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.bot-message .loading-dots span:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+@keyframes dot-blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Input form styling */
+.chat-input-form {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background-color: #6e2e8e; /* Purple background for input */
+  padding: 10px;
+  border-top: 1px solid #8c478d; /* Border line */
+}
+
+/* Chat input field */
+.chat-input {
+  flex: 1;
+  padding: 12px 20px;
+  border-radius: 30px;
+  border: none;
+  background-color: #4e1d62; /* Darker background */
+  color: white;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+/* Input field on focus */
+.chat-input:focus {
+  border-color: #ff7c7c; /* Focus effect with reddish pink */
+}
+
+/* Submit button (Send) */
+.chat-submit-btn {
+  background-color: #ff7c7c; /* Reddish pink for button */
+  color: white;
+  padding: 12px 25px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 16px;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+/* Disable button when loading */
+.chat-submit-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Hover effect for the submit button */
+.chat-submit-btn:hover {
+  background-color: #ff4d4d; /* Slightly darker red on hover */
+}
+
+/* Right side image container */
+.rightImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  background-color: #2f0d39;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  padding: 20px;
+}
+
+.rightImg img {
+  width: 80%; /* Adjust image size */
+  height: auto;
+  border-radius: 50%; /* Circular image */
+}
